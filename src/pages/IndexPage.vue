@@ -6,6 +6,18 @@
       @reset="onReset"
       class="q-gutter-md"
     >
+
+    <!-- id-code -->
+    <q-input
+        filled
+        v-model="id"
+        label="id-code*"
+        hint="Id-code"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Please type id-code']"
+      />
+
+    <!-- name -->
       <q-input
         filled
         v-model="name"
@@ -14,7 +26,7 @@
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Please type name']"
       />
-
+    <!-- surname -->
       <q-input
         filled
         v-model="surname"
@@ -24,6 +36,7 @@
         :rules="[ val => val && val.length > 0 || 'Please type surname']"
       />
 
+    <!-- age -->
       <q-input
         filled
         type="number"
@@ -57,12 +70,14 @@ export default {
 
     const name = ref("สุทธิพจน์")
     const surname = ref("รูปโสม")
+    const id = ref("123456")
     const age = ref(null)
     const accept = ref(false)
 
     return {
       name,
       surname,
+      id,
       age,
       accept,
 
@@ -88,6 +103,7 @@ export default {
       onReset () {
         name.value = null
         surname.value = null
+        id.value = null
         age.value = null
         accept.value = false
       }
