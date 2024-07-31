@@ -103,6 +103,7 @@ export default {
       onReset () {
         name.value = null
         surname.value = null
+        language.value = null
         id.value = null
         age.value = null
         accept.value = false
